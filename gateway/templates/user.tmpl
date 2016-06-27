@@ -1,0 +1,77 @@
+{{define "body-user"}}
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Users</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                {{range $i, $e := .Data.Users}}
+                    <tr>
+                        <td>{{$i}}</td>
+                        <td>{{$e.Username}}</td>
+                        <td>{{$e.Email}}</td>
+                        <td>{{$e.Address}}</td>
+                    </tr>
+                {{end}}
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Items</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                {{range $i, $e := .Data.Items}}
+                    <tr>
+                        <td>{{$i}}</td>
+                        <td>{{$e.Name}}</td>
+                        <td>{{$e.Description}}</td>
+                        <td>{{$e.Price}}</td>
+                    </tr>
+                {{end}}
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Authens</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                {{range $i, $e := .Data.Authens}}
+                    <tr>
+                        <td>{{$i}}</td>
+                        <td>{{$e.Username}}</td>
+                        <td>{{$e.Password}}</td>
+                    </tr>
+                {{end}}
+            </table>
+        </div>
+    </div>
+</div>
+{{end}}

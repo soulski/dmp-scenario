@@ -1,0 +1,22 @@
+{{define "body-member"}}
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>IP</th>
+                <th>Namespace</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        {{range $i, $e := .Data.Members}}
+            <tr>
+                <td>{{$i}}</td>
+                <td>{{$e.IP}}</td>
+                <td>{{$e.Namespace}}</td>
+                <td>{{$e.Status}}</td>
+            </tr>
+        {{end}}
+    </table>
+</div>
+{{end}}

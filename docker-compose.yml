@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+    gateway:
+        image: gateway
+        network_mode: dmp
+        ports:
+            - "8080:80"
+    user:
+        image: user
+        network_mode: dmp
+
+    store:
+        image: store
+        network_mode: dmp
+
+    authen:
+        image: authen
+        network_mode: dmp
+
+    analyse:
+        image: analyse
+        network_mode: dmp
+
+    search:
+        image: search
+        network_mode: dmp
+
+    logging:
+        image: logging
+        network_mode: dmp

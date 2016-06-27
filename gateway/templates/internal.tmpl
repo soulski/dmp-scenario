@@ -1,0 +1,52 @@
+{{define "body-internal"}}
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">System Events</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Target ID</th>
+                        <th>Event</th>
+                        <th>Create Time</th>
+                    </tr>
+                </thead>
+                {{range $i, $e := .Data.Events}}
+                    <tr>
+                        <td>{{$i}}</td>
+                        <td>{{$e.TargetID}}</td>
+                        <td>{{$e.Event}}</td>
+                        <td>{{$e.DisplayTime}}</td>
+                    </tr>
+                {{end}}
+            </table>
+        </div>
+        <div class="panel-heading">
+            <h3 class="panel-title">Search Records</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>ID</th>
+                        <th>RefID</th>
+                        <th>Token</th>
+                    </tr>
+                </thead>
+                {{range $i, $e := .Data.Records}}
+                    <tr>
+                        <td>{{$i}}</td>
+                        <td>{{$e.ID}}</td>
+                        <td>{{$e.IDRef}}</td>
+                        <td>{{$e.Token}}</td>
+                    </tr>
+                {{end}}
+            </table>
+        </div>
+    </div>
+</div>
+{{end}}
